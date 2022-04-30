@@ -13,3 +13,8 @@ module "aws_iam_role_policy_attachment_demo" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
   role       = module.aws_iam_role_demo.name
 }
+
+resource "aws_iam_role_policy_attachment" "default_vpc" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
+  role       = module.aws_iam_role_demo.name
+}

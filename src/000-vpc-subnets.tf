@@ -15,5 +15,5 @@ module "aws_subnet_demo" {
   cidr_block        = each.value.cidr_block
   availability_zone = each.value.availability_zone
 
-  tags = var.tags
+  tags = each.value.tags
 }
